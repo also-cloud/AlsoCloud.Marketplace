@@ -21,6 +21,13 @@ module Marketplace =
             ]
 
         let decoder = Response.statusCode 200 >>. Response.bodyText
+        
+        // // Workaround for PreProd connection issue //
+        let tls12: System.Net.SecurityProtocolType =
+            LanguagePrimitives.EnumOfValue 3072
+
+        do System.Net.ServicePointManager.SecurityProtocol <-
+            tls12
 
         Http.AsyncRequest (url = url, headers = headers, body = body)
             |> Response.unpack decoder
