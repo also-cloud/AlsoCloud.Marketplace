@@ -11,17 +11,17 @@
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = []
 // Web site location for the generated documentation
-let website = "/##ProjectName##"
+let website = "/AlsoCloud.Marketplace"
 
-let githubLink = "##GitUrl##/##GitHome##/##GitName##"
+let githubLink = "https://github.com/also-cloud/AlsoCloud.Marketplace"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "##ProjectName##"
-    "project-author", "##Author##"
-    "project-summary", "##Summary##"
+  [ "project-name", "AlsoCloud.Marketplace"
+    "project-author", "Ed Ilyin"
+    "project-summary", "ACMP API"
     "project-github", githubLink
-    "project-nuget", "http://nuget.org/packages/##ProjectName##" ]
+    "project-nuget", "http://nuget.org/packages/AlsoCloud.Marketplace" ]
 
 // --------------------------------------------------------------------------------------
 // For typical project, no changes are needed below

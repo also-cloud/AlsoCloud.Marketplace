@@ -1,0 +1,25 @@
+type project
+title
+    AlsoCloud.Marketplace
+owners
+    Ed Ilyin
+authors 
+    Ed Ilyin
+projectUrl
+    https://github.com/also-cloud/AlsoCloud.Marketplace
+iconUrl
+    https://raw.githubusercontent.com/also-cloud/AlsoCloud.Marketplace/master/docs/files/img/logo.png
+licenseUrl
+    https://github.com/also-cloud/AlsoCloud.Marketplace/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    also cloud marketplace acmp acm api
+summary
+    ACMP API
+description
+    ALSO Cloud Marketplace API
+
+
