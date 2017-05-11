@@ -13,8 +13,8 @@ module Marketplace =
         | Delete
 
 
-    let action =
-        Json.Decode.string
+    let action decoder =
+        decoder
             |> Decode.andThen
                 (function
                     | "CREATE" -> Ok Create
