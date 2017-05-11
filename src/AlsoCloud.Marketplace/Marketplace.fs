@@ -1,18 +1,37 @@
 namespace AlsoCloud
 
-open EdIlyin.FSharp.Elm.Core.Json
-open EdIlyin.FSharp.Http
 open EdIlyin.FSharp.Elm.Core.Decode
+open EdIlyin.FSharp.Elm.Core
+open EdIlyin.FSharp.Http
 open FSharp.Data
 
 
 module Marketplace =
+    type Action =
+        | Create
+        | Modify
+        | Delete
+
+
+    let action =
+        Json.Decode.string
+            |> Decode.andThen
+                (function
+                    | "CREATE" -> Ok Create
+                    | "MODIFY" -> Ok Modify
+                    | "DELETE" -> Ok Delete
+                    | other ->
+                        sprintf "Unexpected action '%s'." other |> Err
+                    >> Decode.fromResult
+                )
+
+
     let callbackHelper url status result =
         let body =
-            ["status", Encode.string status]
+            ["status", Json.Encode.string status]
                 @ result
-                |> Encode.object'
-                |> Encode.encode
+                |> Json.Encode.object'
+                |> Json.Encode.encode
                 |> HttpRequestBody.TextRequest
 
         let headers =
@@ -41,13 +60,13 @@ module Marketplace =
                 ["outArguments",
                     List.map
                         (fun (name, value) ->
-                            Encode.object'
-                                [   "Name", Encode.string name
+                            Json.Encode.object'
+                                [   "Name", Json.Encode.string name
                                     "Value", value
                                 ]
                         )
                         list
-                        |> Encode.list
+                        |> Json.Encode.list
                 ]
 
             |> callbackHelper url "Completed"
@@ -55,4 +74,4 @@ module Marketplace =
 
     let callbackFailed url errorDetails =
         callbackHelper url "Failed"
-            ["errorDetails", Encode.string errorDetails]
+            ["errorDetails", Json.Encode.string errorDetails]
