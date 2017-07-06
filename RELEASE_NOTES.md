@@ -1,4 +1,10 @@
-### 0.0.4 - May 11 2017
+### 0.1.0 - Jule 6 2017
+* moves to native Result
+
+#### 0.0.5 - June 29 2017
+* EdIlyin.FSharp.Http -> 0.0.3
+
+#### 0.0.4 - May 11 2017
 * Now you should provide predecoder for action
 
 #### 0.0.3 - May 11 2017
