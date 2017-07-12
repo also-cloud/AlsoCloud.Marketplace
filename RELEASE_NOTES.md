@@ -1,3 +1,6 @@
+### 0.1.1 - July 12 2017
+* back to net4.5 and target 4.1.0.0
+
 ### 0.1.0 - Jule 6 2017
 * moves to native Result
 

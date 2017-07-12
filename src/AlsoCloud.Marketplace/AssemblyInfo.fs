@@ -5,8 +5,8 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("AlsoCloud.Marketplace")>]
 [<assembly: AssemblyProductAttribute("AlsoCloud.Marketplace")>]
 [<assembly: AssemblyDescriptionAttribute("ACMP API")>]
-[<assembly: AssemblyVersionAttribute("0.1.0")>]
-[<assembly: AssemblyFileVersionAttribute("0.1.0")>]
+[<assembly: AssemblyVersionAttribute("0.1.1")>]
+[<assembly: AssemblyFileVersionAttribute("0.1.1")>]
 [<assembly: AssemblyConfigurationAttribute("Release")>]
 do ()
 
@@ -14,6 +14,6 @@ module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyTitle = "AlsoCloud.Marketplace"
     let [<Literal>] AssemblyProduct = "AlsoCloud.Marketplace"
     let [<Literal>] AssemblyDescription = "ACMP API"
-    let [<Literal>] AssemblyVersion = "0.1.0"
-    let [<Literal>] AssemblyFileVersion = "0.1.0"
+    let [<Literal>] AssemblyVersion = "0.1.1"
+    let [<Literal>] AssemblyFileVersion = "0.1.1"
     let [<Literal>] AssemblyConfiguration = "Release"
