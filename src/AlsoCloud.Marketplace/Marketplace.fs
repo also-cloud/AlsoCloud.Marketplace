@@ -1,10 +1,9 @@
 module AlsoCloud.Marketplace
 
-open EdIlyin.FSharp.Elm.Core.Decode
-open EdIlyin.FSharp.Elm.Core
-open EdIlyin.FSharp.Boxcar
-open EdIlyin.FSharp.Http
 open FSharp.Data
+open FSharp.EdIlyin.Core
+open FSharp.EdIlyin.Core.Decode
+open FSharp.EdIlyin.Http
 
 
 type Action =
