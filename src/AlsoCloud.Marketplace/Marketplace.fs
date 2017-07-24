@@ -29,12 +29,13 @@ let action decoder =
 
 
 let callbackHelper url status result =
-    let body =
+    let json =
         ["status", Json.Encode.string status]
             @ result
             |> Json.Encode.object'
             |> Json.Encode.encode
-            |> HttpRequestBody.TextRequest
+
+    let body = HttpRequestBody.TextRequest json
 
     let headers =
         [HttpRequestHeaders.ContentType
@@ -42,7 +43,7 @@ let callbackHelper url status result =
         ]
 
     let decoder = Response.statusCode 200 >>. Response.bodyText
-    
+
     // // Workaround for PreProd connection issue //
     let tls12: System.Net.SecurityProtocolType =
         LanguagePrimitives.EnumOfValue 3072
@@ -52,6 +53,7 @@ let callbackHelper url status result =
 
     Http.AsyncRequest (url = url, headers = headers, body = body)
         |> Response.unpack decoder
+        |> Boxcar.map ((=>) json)
 
 
 let callbackCompleted url arguments =
