@@ -1,18 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup Label="Globals">
     <ProjectGuid>9e18391c-d3e8-4b7e-b80e-a1188c05fef1</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>1.0.1</Version>
-    <TargetFrameworks>net461;net462</TargetFrameworks>
+    <Version>1.0.2</Version>
+    <TargetFrameworks>net461</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Marketplace.fs" />
     <Content Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="FSharp.Data" Version="2.3.3" />
-    <PackageReference Include="FSharp.EdIlyin.Core" Version="1.0.7" />
-    <PackageReference Include="FSharp.EdIlyin.Http" Version="1.0.2" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

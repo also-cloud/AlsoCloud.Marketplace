@@ -2,6 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26711.1
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{F204935D-D840-4D2B-9DB2-4C9ABD984812}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09FA2970-F4E2-4164-BB12-5B0E018360E4}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AlsoCloud.Marketplace", "src\AlsoCloud.Marketplace\AlsoCloud.Marketplace.fsproj", "{9E18391C-D3E8-4B7E-B80E-A1188C05FEF1}"
