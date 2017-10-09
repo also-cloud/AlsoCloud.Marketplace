@@ -35,8 +35,8 @@ type CallbackUrl = string
 type AccountId = int
 
 
-let action =
-    JD.string
+let action decoder =
+    decoder
         |> Decode.andThen
             (function
                 | "CREATE" -> Ok Create
