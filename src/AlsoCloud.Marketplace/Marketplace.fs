@@ -377,15 +377,6 @@ let authenticationPromise host username password =
     authenticate username password host |> Promise.queue |> Job.map Ok
 
 
-// Workaround for PreProd connection issue //
-let tls12: System.Net.SecurityProtocolType =
-    LanguagePrimitives.EnumOfValue 3072
-
-
-do System.Net.ServicePointManager.SecurityProtocol <- tls12
-/////////////////////////////////////////////
-
-
 let callbackHelper url status result =
     let body =
         ["status", JE.string status]
@@ -401,6 +392,15 @@ let callbackHelper url status result =
 
     let decoder =
         Decode.map2 second (Response.statusCode 200) Response.bodyText
+
+
+    // Workaround for PreProd connection issue //
+    let tls12: System.Net.SecurityProtocolType =
+        LanguagePrimitives.EnumOfValue 3072
+
+
+    do System.Net.ServicePointManager.SecurityProtocol <- tls12
+    /////////////////////////////////////////////
 
 
     Http.AsyncRequest (url = url, headers = headers, body = body)
